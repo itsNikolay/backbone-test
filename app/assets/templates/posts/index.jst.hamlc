@@ -1,0 +1,15 @@
+%h1 Posts
+
+%table
+  %tr
+    %th Тайтл
+    %th Контент
+    %th Действия
+  - for post in @posts.models
+    %tr
+      %td = post.get('title')
+      %td!= post.get('content')
+      %td
+        %a#show_post{ href: "/posts/#{post.get('id')}", data: {id: "#{post.get('id')}"}} Показать
+
+%button#create_post Создать пост

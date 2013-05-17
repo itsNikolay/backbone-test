@@ -1,0 +1,6 @@
+-#- console.log @posts
+= @post.get('title')
+%p
+  != @post.get('content')
+
+%a{ href: "/posts", id: "back-to-posts"} Назад
