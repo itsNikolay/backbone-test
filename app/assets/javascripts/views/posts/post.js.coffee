@@ -15,10 +15,3 @@ class BackboneTest.Views.Post extends Backbone.View
   navigateBack: (e) ->
     e.preventDefault()
     Backbone.history.navigate("/posts", trigger: true);
-
-#  initialize: ->
-#    @collection.on('reset', @render, @)
-#
-#  render: ->
-#    $(@el).html(@template(post: @model))
-#    @

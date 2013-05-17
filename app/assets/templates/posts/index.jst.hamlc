@@ -12,4 +12,4 @@
       %td
         %a#show_post{ href: "/posts/#{post.get('id')}", data: {id: "#{post.get('id')}"}} Показать
 
-%button#create_post Создать пост
+%a#post-new{ href: "/posts/new" } Создать пост

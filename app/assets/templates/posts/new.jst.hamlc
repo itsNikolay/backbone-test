@@ -1,0 +1,13 @@
+%h1 Новый пост
+
+%form
+  .field
+    %label{ for: "title" } Title
+    %input{ type: "text", name: "title", id: "title-input", value: "123" }
+  .field
+    %label{ for: "content" } Content
+    %textarea{ name: "body", id: "content-textarea" }
+  .actions
+    %input{ type: "submit", value: "create" }
+
+%a{ href: "/posts", id: "back-to-posts"} Назад

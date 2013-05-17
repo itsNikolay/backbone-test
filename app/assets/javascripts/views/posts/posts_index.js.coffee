@@ -4,6 +4,7 @@ class BackboneTest.Views.PostsIndex extends Backbone.View
 
   events:
     'click a#show_post': 'showPost'
+    'click a#post-new': 'createPost'
 
   initialize: ->
     @collection.on('reset', @render, @)
@@ -16,3 +17,7 @@ class BackboneTest.Views.PostsIndex extends Backbone.View
     e.preventDefault()
     attrId = $(e.currentTarget).attr('data-id')
     Backbone.history.navigate("/posts/#{attrId}", trigger: true);
+
+  createPost: (e) ->
+    e.preventDefault()
+    Backbone.history.navigate("/posts/new", trigger: true);
