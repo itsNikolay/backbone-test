@@ -140,6 +140,7 @@
     <file path="$USER_HOME$/evrone/WORK/mf/app/views/admin/articles/show.html.haml" changelist="44ed99dd-3415-4f23-849f-ff18ddb596f4" time="1368715688111" ignored="false" />
     <file path="/article.rb" changelist="44ed99dd-3415-4f23-849f-ff18ddb596f4" time="1368715874174" ignored="false" />
     <file path="/articles_controller.rb" changelist="44ed99dd-3415-4f23-849f-ff18ddb596f4" time="1368715890232" ignored="false" />
+    <file path="/.gitignore" changelist="44ed99dd-3415-4f23-849f-ff18ddb596f4" time="1368790510319" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,19 +198,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="posts_index.js.coffee" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="posts_index.js.coffee" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/posts/posts_index.js.coffee">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="18" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.37965262">
+                <state line="18" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="entry.js.coffee" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/entries/entry.js.coffee">
+          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="26" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+                <state line="16" column="5" selection-start="436" selection-end="436" vertical-scroll-proportion="0.33374232">
                   <folding />
                 </state>
               </provider>
@@ -367,7 +368,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/main/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
@@ -383,6 +383,7 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/posts/post.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/templates/posts/index.jst.hamlc" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/views/posts/posts_index.js.coffee" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -1169,13 +1170,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/templates/entries/entry.jst.hamlc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="76" selection-end="76" vertical-scroll-proportion="-2.6153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/templates/entries/index.jst.hamlc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1192,7 +1186,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/entries/entry.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+        <state line="13" column="10" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1280,7 +1274,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/views/posts/posts_index.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.37965262">
+        <state line="18" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="5" selection-start="436" selection-end="436" vertical-scroll-proportion="0.33374232">
           <folding />
         </state>
       </provider>
