@@ -28,7 +28,8 @@ class BackboneTest.Views.PostsIndex extends Backbone.View
     attrId = $(e.currentTarget).attr('data-id')
     post = new BackboneTest.Models.Post(id: attrId)
     collection = new BackboneTest.Collections.Posts post
-    post.destroy()
-    Backbone.history.navigate("/posts", trigger: true)
+    post.destroy
+      wait: true
+      success: -> $(e.currentTarget).closest('tr').remove()
 
 #    Backbone.history.navigate("/posts/#{attrId}/delete", trigger: true);
