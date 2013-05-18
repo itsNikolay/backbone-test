@@ -1,5 +1,7 @@
 %h1 Posts
 
+%a#post-new{ href: "/posts/new" } Создать пост
+
 %table
   %tr
     %th Тайтл
@@ -14,4 +16,3 @@
         %a#edit_post{ href: "/posts/#{post.get('id')}/edit", data: {id: "#{post.get('id')}"}} Редактировать
         %a#delete_post{ href: "/posts/#{post.get('id')}/delete", data: {id: "#{post.get('id')}"}} Удалить
 
-%a#post-new{ href: "/posts/new" } Создать пост

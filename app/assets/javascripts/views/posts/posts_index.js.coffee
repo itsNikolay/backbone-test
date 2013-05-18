@@ -12,13 +12,21 @@ class BackboneTest.Views.PostsIndex extends Backbone.View
     @collection.on('reset', @render, @)
 
   render: ->
+    console.log "render"
     @$el.html @template(posts: @collection)
     @
 
   showPost: (e) ->
     e.preventDefault()
+    jTable = $('table')
     attrId = $(e.currentTarget).attr('data-id')
-    Backbone.history.navigate("/posts/#{attrId}", trigger: true);
+    @post = new BackboneTest.Models.Post(id: attrId)
+    collection = new BackboneTest.Collections.Posts @post
+    @post.fetch(reset: true)
+    jTable.hide "slide", { direction: "left" }, =>
+      view = new BackboneTest.Views.PostsEdit(model: @post, collection: collection)
+      jTable.show("slide", { direction: "right" }).html(view.render().el)
+      Backbone.history.navigate("/posts/#{attrId}")
 
   createPost: (e) ->
     e.preventDefault()

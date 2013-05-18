@@ -12,7 +12,6 @@ class BackboneTest.Views.PostsEdit extends Backbone.View
     @model.on 'save', @navigateToPost, @
 
   render: ->
-    console.log @model.get 'title'
     $(@el).html(@template(post: @model))
     @
 
@@ -24,13 +23,18 @@ class BackboneTest.Views.PostsEdit extends Backbone.View
     @model.save(null, {
       wait: true
       success: =>
-        console.log "saved"
         @model.trigger('save')
       error: -> alert("error")
     })
 
   navigateBack: (e) ->
-    Backbone.history.navigate("/posts", trigger: true);
+    e.preventDefault()
+    @collection.fetch(reset: true)
+    jTable = $('table')
+    jTable.hide "slide", { direction: "left" }, =>
+      view = new BackboneTest.Views.PostsIndex(collection: @collection)
+      jTable.show("slide", { direction: "right" }, 1000).html(view.render().el)
+      Backbone.history.navigate("/posts")
 
   navigateToPost: ->
     modelId = @model.get 'id'
