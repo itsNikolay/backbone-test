@@ -11,6 +11,7 @@
       %td!= post.get('content')
       %td
         %a#show_post{ href: "/posts/#{post.get('id')}", data: {id: "#{post.get('id')}"}} Показать
+        %a#edit_post{ href: "/posts/#{post.get('id')}/edit", data: {id: "#{post.get('id')}"}} Редактировать
         %a#delete_post{ href: "/posts/#{post.get('id')}/delete", data: {id: "#{post.get('id')}"}} Удалить
 
 %a#post-new{ href: "/posts/new" } Создать пост

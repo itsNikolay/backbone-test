@@ -4,8 +4,9 @@ class BackboneTest.Views.PostsIndex extends Backbone.View
 
   events:
     'click a#show_post': 'showPost'
-    'click a#post-new': 'createPost'
+    'click a#edit_post': 'editPost'
     'click a#delete_post': 'deletePost'
+    'click a#post-new': 'createPost'
 
   initialize: ->
     @collection.on('reset', @render, @)
@@ -32,4 +33,7 @@ class BackboneTest.Views.PostsIndex extends Backbone.View
       wait: true
       success: -> $(e.currentTarget).closest('tr').remove()
 
-#    Backbone.history.navigate("/posts/#{attrId}/delete", trigger: true);
+  editPost: (e) ->
+    e.preventDefault()
+    attrId = $(e.currentTarget).attr('data-id')
+    Backbone.history.navigate("/posts/#{attrId}/edit", trigger: true);

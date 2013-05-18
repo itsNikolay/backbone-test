@@ -1,0 +1,13 @@
+%h1 Редактирование поста
+
+%form
+  .field
+    %label{ for: "title" } Title
+    %input{ type: "text", name: "title", id: "title-input", value: "#{@post.get('title')}" }
+  .field
+    %label{ for: "content" } Content
+    %textarea{ name: "body", id: "content-textarea" }= @post.get('content')
+  .actions
+    %input{ type: "submit", value: "Редактировать" }
+
+%a{ href: "/posts", id: "back-to-posts"} Назад

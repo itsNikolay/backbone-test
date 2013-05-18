@@ -4,6 +4,7 @@ class BackboneTest.Routers.Posts extends Backbone.Router
     'posts/new': 'new'
     'posts/:id': 'show'
     'posts/:id/delete': 'delete'
+    'posts/:id/edit': 'edit'
 
   initialize: ->
     @collection = new BackboneTest.Collections.Posts()
@@ -25,8 +26,7 @@ class BackboneTest.Routers.Posts extends Backbone.Router
     post = new BackboneTest.Models.Post
 #    posts = new BackboneTest.Collections.Posts
     @collection.bind 'add', =>
-      triggerRouter = true
-      @navigate '/posts', triggerRouter
+      @navigate '/posts', true
     view = new BackboneTest.Views.PostsNew
       collection: @collection
       model: post
@@ -39,3 +39,11 @@ class BackboneTest.Routers.Posts extends Backbone.Router
     post.destroy
       success: -> Backbone.history.navigate("/posts", trigger: true);
 
+  edit: (id) ->
+    @post = new BackboneTest.Models.Post(id: id)
+    collection = new BackboneTest.Collections.Posts @post
+    @post.fetch(reset: true)
+    view = new BackboneTest.Views.PostsEdit(model: @post, collection: collection)
+    $('#posts').html(view.render().el)
+    @post.bind 'saved', =>
+      @navigate '/posts', true
