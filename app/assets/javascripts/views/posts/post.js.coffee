@@ -14,4 +14,10 @@ class BackboneTest.Views.Post extends Backbone.View
 
   navigateBack: (e) ->
     e.preventDefault()
-    Backbone.history.navigate("/posts", trigger: true);
+    @collection = new BackboneTest.Collections.Posts()
+    @collection.fetch(reset: true)
+    jTable = $('#posts')
+    jTable.hide "slide", { direction: "right" }, =>
+      view = new BackboneTest.Views.PostsIndex(collection: @collection)
+      jTable.show("slide", { direction: "left" }).html(view.render().el)
+      Backbone.history.navigate("/posts")

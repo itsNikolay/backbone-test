@@ -1,4 +1,4 @@
-%h1 Posts
+%h1 Списик постов
 
 %a#post-new{ href: "/posts/new" } Создать пост
 

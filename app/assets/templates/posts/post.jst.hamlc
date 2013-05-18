@@ -1,4 +1,6 @@
 -#- console.log @posts
+%h1= @post.get 'title'
+
 = @post.get('title')
 %p
   != @post.get('content')
