@@ -39,9 +39,16 @@ class BackboneTest.Views.PostsIndex extends Backbone.View
     collection = new BackboneTest.Collections.Posts post
     post.destroy
       wait: true
-      success: -> $(e.currentTarget).closest('tr').remove()
+      success: -> $(e.currentTarget).closest('tr').toggle( "explode" )
 
   editPost: (e) ->
     e.preventDefault()
+    jTable = $('#posts')
     attrId = $(e.currentTarget).attr('data-id')
-    Backbone.history.navigate("/posts/#{attrId}/edit", trigger: true);
+    @post = new BackboneTest.Models.Post(id: attrId)
+    collection = new BackboneTest.Collections.Posts @post
+    @post.fetch(reset: true)
+    jTable.hide "slide", { direction: "left" }, =>
+      view = new BackboneTest.Views.PostsEdit(model: @post, collection: collection)
+      jTable.show("slide", { direction: "right" }).html(view.render().el)
+      Backbone.history.navigate("/posts/#{attrId}/edit")

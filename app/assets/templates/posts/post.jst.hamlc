@@ -5,4 +5,6 @@
 %p
   != @post.get('content')
 
+%a#edit_post{ href: "/posts/#{@post.get('id')}/edit", data: {id: "#{@post.get('id')}"}} Редактировать
+%br
 %a{ href: "/posts", id: "back-to-posts"} Назад

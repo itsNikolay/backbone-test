@@ -8,6 +8,6 @@
     %label{ for: "content" } Content
     %textarea{ name: "body", id: "content-textarea" }= @post.get('content')
   .actions
-    %input{ type: "submit", value: "Редактировать" }
+    %input{ type: "submit", value: "Сохранить" }
 
 %a{ href: "/posts", id: "back-to-posts"} Назад

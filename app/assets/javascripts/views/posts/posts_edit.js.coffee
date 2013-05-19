@@ -38,5 +38,12 @@ class BackboneTest.Views.PostsEdit extends Backbone.View
       Backbone.history.navigate("/posts")
 
   navigateToPost: ->
+    jTable = $('#posts')
     modelId = @model.get 'id'
-    Backbone.history.navigate("/posts/#{modelId}", trigger: true);
+    @post = new BackboneTest.Models.Post(id: modelId)
+    collection = new BackboneTest.Collections.Posts @post
+    @post.fetch(reset: true)
+    jTable.hide "slide", { direction: "left" }, =>
+      view = new BackboneTest.Views.Post(model: @post, collection: collection)
+      jTable.show("slide", { direction: "right" }).html(view.render().el)
+      Backbone.history.navigate("/posts/#{modelId}")

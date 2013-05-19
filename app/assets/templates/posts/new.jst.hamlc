@@ -2,12 +2,12 @@
 
 %form
   .field
-    %label{ for: "title" } Title
-    %input{ type: "text", name: "title", id: "title-input", value: "123" }
+    %label{ for: "title" } Тайтл
+    %input{ type: "text", name: "title", id: "title-input" }
   .field
-    %label{ for: "content" } Content
+    %label{ for: "content" } Контент
     %textarea{ name: "body", id: "content-textarea" }
   .actions
-    %input{ type: "submit", value: "create" }
+    %input{ type: "submit", value: "Создать" }
 
 %a{ href: "/posts", id: "back-to-posts"} Назад
